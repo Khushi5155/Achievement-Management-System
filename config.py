@@ -4,7 +4,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 class Config:
     # Security
-    SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-key")
+    # SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-key")
 
     # Database
     DB_PATH = os.environ.get(
@@ -25,9 +25,21 @@ class Config:
     MAX_CONTENT_LENGTH = 5 * 1024 * 1024
 
 
+
+
 class DevelopmentConfig(Config):
     DEBUG = True
+    SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-key")
 
 
 class ProductionConfig(Config):
     DEBUG = False
+    SECRET_KEY = os.environ.get("SECRET_KEY")
+
+    @classmethod
+    def validate(cls):
+        if not cls.SECRET_KEY:
+            raise RuntimeError(
+                "SECRET_KEY environment variable must be set in production"
+            )
+
