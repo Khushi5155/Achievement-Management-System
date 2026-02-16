@@ -4,17 +4,36 @@
 
 <!-- Hero Section -->
 <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-grid"></div>
+
     <div class="hero-content">
-        <h1>Welcome to Achievement Management System</h1>
-        <p>A centralized platform where students and teachers track academic achievements in one place. Students view
-            their accomplishments, teachers record them, and everyone gets a clear picture of academic progress — all
-            automated and organized.</p>
+        <h1 class="hero-title">
+            Track. Manage. Showcase.
+            <span>All Achievements in One Place.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            A centralized platform where students and teachers track academic
+            achievements seamlessly. Smart dashboards, organized certificates,
+            and powerful analytics — all automated and structured.
+        </p>
+
         <div class="hero-buttons">
-            <a href="{{ url_for('student') }}" class="btn btn-primary">Student Login</a>
-            <a href="{{ url_for('teacher') }}" class="btn btn-secondary">Teacher Login</a>
+            <a href="{{ url_for('student') }}" class="btn btn-primary glow-btn">
+                Student Login
+            </a>
+            <a href="{{ url_for('teacher') }}" class="btn btn-secondary">
+                Teacher Login
+            </a>
         </div>
     </div>
+
+    <!-- Floating decorative shapes -->
+    <div class="hero-shape shape-1"></div>
+    <div class="hero-shape shape-2"></div>
 </section>
+
 
 <!-- Features Section -->
 <section id="features" class="features">
